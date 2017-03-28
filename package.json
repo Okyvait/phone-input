@@ -1,0 +1,14 @@
+{
+  "name": "phone-validate-ts",
+  "version": "0.0.1",
+  "publishConfig": {
+    "registry": "https://npm.itmh.ru"
+  },
+  "scripts": {
+
+  },
+  "homepage": "https://github.com/TinyJack/phone-validate-ts/README.md",
+  "devDependencies": {
+  
+  }
+}
