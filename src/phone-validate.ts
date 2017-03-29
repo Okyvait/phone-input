@@ -5,11 +5,14 @@ export default class Phone {
     }
 
     get phone(): string {
-        return this._phone + '';
+        return String(this._phone);
     }
 
     set phone(newPhone: string) {
-
+        newPhone = newPhone.replace(/(^|)((\+\d\s)|([^\d]))/g,'');
+        if (newPhone.length <= this.limit) {
+            this._phone = Number(newPhone);
+        }
     }
 }
 
