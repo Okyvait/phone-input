@@ -1,7 +1,10 @@
+const dev = process.env.NODE_ENV !== 'production';
+
 module.exports = {
-    entry: './src/index.ts',
+    entry: './example/index.ts',
+    watch: dev,
     output: {
-        filename: './dist/bundle.js',
+        filename: './example/bundle.js',
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js']

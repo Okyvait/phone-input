@@ -1,7 +1,7 @@
-export default class Phone {
+export default class PhoneValidation {
     private _phone: number;
     flag: boolean;
-    constructor(public limit=10, public spacePositions=[3, 7, 10]) {
+    constructor(public limit=10, public spaces=[3, 7, 10]) {
     }
 
     get phone(): string {
