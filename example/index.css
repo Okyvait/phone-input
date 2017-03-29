@@ -1,0 +1,36 @@
+:root {
+    --border-color: #3dbfff;
+    --padding: 6px 8px;
+}
+.page {
+    padding: 100px 60px;
+    font-family: "Arial, sans-serif";
+}
+.phone--list {
+    color: grey;
+    padding-top: 60px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.phone--list li {
+    padding: var(--padding);
+}
+
+.phone {
+    border-radius: 2px;
+    border: 1px solid #bbb;
+    padding: var(--padding);
+    outline: none;
+    min-width: 350px;
+    font-size: 0.9em;
+}
+
+.phone:focus {
+    border-color: var(--border-color);
+}
+
+.phone--label {
+    padding-bottom: 15px;
+    display: block;
+}
