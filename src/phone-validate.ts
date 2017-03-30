@@ -1,6 +1,6 @@
 export default class PhoneValidation {
     private _phone: number;
-    flag: boolean;
+    public flag: boolean = false;
     constructor(
         public limit=10, 
         public spaces=[3, 7, 10], 
@@ -8,13 +8,16 @@ export default class PhoneValidation {
     ) {}
 
     get phone(): string {
+        if (this._phone === null) {
+           return this.flag ? this.preffix : '';
+        }
         return String(this._phone);
     }
 
     set phone(newPhone: string) {
         newPhone = newPhone.replace(/(^|)((\+\d\s)|([^\d]))/g,'');
         if (newPhone.length <= this.limit) {
-            this._phone = Number(newPhone);
+            this._phone = Number(newPhone) || null;
         }
     }
     
@@ -25,12 +28,15 @@ export default class PhoneValidation {
         this.phone = String(val);
         return this.phone;
     }
-    
+
     /**
      * add phone preffix
      */
-    addPhonePrefix = function() {
-        this.flag = true;
+    addPhonePrefix() { this.flag = true; }
+
+    removePhonePrefix() { 
+        this.flag = false;
+        this.phone = ''; 
     }
 }
 
