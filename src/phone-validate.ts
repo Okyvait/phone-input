@@ -50,5 +50,12 @@ export default class PhoneValidation {
             this.phone = '';
         }  
     }
+
+    /**
+     * get pure phone number
+     */
+    getNumber() {
+        return this._phone;
+    }
 }
 
