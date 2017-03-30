@@ -8,8 +8,11 @@ phoneInput.oninput = () => {
 	console.log(phoneCheck.phone);
 }
 
-phoneInput.onclick = () => { phoneCheck.addPhonePrefix(); }
+phoneInput.onclick = () => { 
+	phoneCheck.addPhonePrefix();
+	phoneInput.value = phoneCheck.phone;
+}
 phoneInput.onblur = () => { 
 	phoneCheck.removePhonePrefix();
-	phoneInput.value = ''; 
+	phoneInput.value = phoneCheck.validate(phoneInput.value); 
 }
