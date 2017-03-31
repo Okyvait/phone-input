@@ -1,32 +1,32 @@
-import PhoneValidation from '../src/phone-validate';
+import PhoneInput from '../src/phone-input';
 
-let phoneCheck = new PhoneValidation();
-let phoneInput = <HTMLInputElement> document.querySelector('.phone');
+let phoneInput = new PhoneInput();
+let phone = <HTMLInputElement> document.querySelector('.phone');
 let phoneList = <HTMLInputElement> document.querySelector('.phone--list');
 
-phoneInput.oninput = () => {
-	phoneInput.value = phoneCheck.validate(phoneInput.value);
-}
+phone.oninput = () => {
+	phone.value = phoneInput.getValidatedPhone(phone.value);
+};
 
-phoneInput.onclick = () => { 
-	phoneCheck.addPhonePrefix();
-	phoneInput.value = phoneCheck.phone;
-}
+phone.onclick = () => { 
+	phoneInput.addPhonePrefix();
+	phone.value = phoneInput.phone;
+};
 
-phoneInput.onblur = () => { 
-	phoneCheck.removePhonePrefix();
-	phoneInput.value = phoneCheck.validate(phoneInput.value); 
-}
+phone.onblur = () => { 
+	phoneInput.removePhonePrefix();
+	phone.value = phoneInput.getValidatedPhone(phone.value);
+};
 
-phoneInput.onkeypress = event => {
+phone.onkeypress = event => {
 	if (event.which == 13 || event.keyCode == 13) {
-		let phone = String(phoneCheck.getNumber());
-    	if (phone.length === phoneCheck.limit) {
+		let number = String(phoneInput.getPhoneNumber());
+    	if (number.length === phoneInput.limit) {
     		let li = document.createElement('li');
-    		li.innerHTML = phoneCheck.phone;
+    		li.innerHTML = phoneInput.phone;
     		phoneList.appendChild(li);
-    		phoneCheck.phone = '';
-    		phoneInput.value = '';
+    		phoneInput.phone = '';
+    		phone.value = '';
     	}
     }
-}
+};

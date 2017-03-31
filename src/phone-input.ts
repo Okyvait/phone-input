@@ -1,22 +1,21 @@
-export default class PhoneValidation {
+export default class PhoneInput {
     private _phone: number = null;
     public flag: boolean = false;
     constructor(
-        public limit:number=10, 
-        public spaces:number[]=[2, 6, 10], 
-        public preffix:string='+7'
+        public limit:number = 10,
+        public spaces:number[] = [2, 6, 10],
+        public prefix:string = '+7'
     ) {}
 
     get phone(): string {
         if (this._phone === null) {
-           return this.flag ? this.preffix : '';
+           return this.flag ? this.prefix : '';
         }
-        let phoneStr = `${this.preffix}${this._phone}`;
+        let phoneStr = `${this.prefix}${this._phone}`;
         for (let spacePos of this.spaces) {
             if (spacePos < phoneStr.length) {
                 phoneStr = `${phoneStr.slice(0, spacePos)} ${phoneStr.slice(spacePos)}`;
             }
-            
         }
         return phoneStr;
     }
@@ -29,20 +28,20 @@ export default class PhoneValidation {
     }
     
     /** get validated phone
-     * @param {string}
+     * @param newPhone {string}
      */
-    validate(val: string | number) {
-        this.phone = String(val);
+    getValidatedPhone(newPhone: string) {
+        this.phone = newPhone;
         return this.phone;
     }
 
     /**
-     * add phone preffix
+     * add phone prefix
      */
     addPhonePrefix() { this.flag = true; }
     
     /**
-     * remove phone preffix
+     * remove phone prefix
      */
     removePhonePrefix() {
         if (this._phone === null) {
@@ -54,7 +53,7 @@ export default class PhoneValidation {
     /**
      * get pure phone number
      */
-    getNumber() {
+    getPhoneNumber() {
         return this._phone;
     }
 }
