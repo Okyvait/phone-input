@@ -1,33 +1,61 @@
 :root {
-    --border-color: #3dbfff;
+    --focus-color: #ecd7ac;
     --padding: 6px 8px;
+    --dark: #6f6a67;
+    --dark-beige: #ecdfcd;
+    --brown: #beb9b5;
+    --beige: #fef6eb;
+    --ligth: #f9f4ed;
 }
+
+html, body {
+    min-height: 100vh;
+    min-width: 100vw;
+    padding: 0;
+    margin: 0;
+    color: var(--dark);
+    background-color: var(--beige);
+}
+
+::-webkit-input-placeholder { color: white; }
+::-moz-placeholder     { color: white; }
+:-moz-placeholder      { color: white; }
+:-ms-input-placeholder { color: white; }
+
 .page {
     padding: 100px 60px;
     font-family: Arial, sans-serif;
 }
 .phone--list {
-    color: grey;
+    color: var(--ligth);
     padding-top: 60px;
     padding-left: 0;
     list-style: none;
+    max-width: 55%;
+    min-width: 370px;
 }
 
 .phone--list li {
     padding: var(--padding);
+    background-color: var(--brown);
+    border-top: 3px solid #FEF6EC;
+    border-radius: 3px;
 }
 
 .phone {
     border-radius: 2px;
-    border: 1px solid #bbb;
+    border: 1px solid #e0d5c6;
     padding: var(--padding);
     outline: none;
     min-width: 350px;
     font-size: 0.9em;
+    background-color: var(--dark-beige);
+    color: var(--dark);
 }
 
 .phone:focus {
-    border-color: var(--border-color);
+    border-color: var(--focus-color);
+    box-shadow: 0 0 1px 0px #ffb100;
 }
 
 .phone--label {
