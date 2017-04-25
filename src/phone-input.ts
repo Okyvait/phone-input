@@ -1,4 +1,4 @@
-export default class PhoneInput {
+export class PhoneInput {
     private _phone: number = null;
     public flag: boolean = false;
     constructor(

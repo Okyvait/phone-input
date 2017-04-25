@@ -1,6 +1,6 @@
-import PhoneInput from '../src/phone-input';
+//import { PhoneInput } from "./phone-input.js";
 
-let phoneInput = new PhoneInput();
+let phoneInput = new (window as any).ValidationLibrary.PhoneInput();
 let phone = <HTMLInputElement> document.querySelector('.phone');
 let phoneList = <HTMLInputElement> document.querySelector('.phone--list');
 
@@ -8,12 +8,12 @@ phone.oninput = () => {
 	phone.value = phoneInput.getValidatedPhone(phone.value);
 };
 
-phone.onclick = () => { 
+phone.onclick = () => {
 	phoneInput.addPhonePrefix();
 	phone.value = phoneInput.phone;
 };
 
-phone.onblur = () => { 
+phone.onblur = () => {
 	phoneInput.removePhonePrefix();
 	phone.value = phoneInput.getValidatedPhone(phone.value);
 };
