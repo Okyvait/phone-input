@@ -1,9 +1,7 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
-    "sourceMap": true,
     "target": "es5",
-    "allowJs": true,
-    "alwaysStrict": true
-  }
+    "allowJs": true
+  },
+  "exclude": ["dist", "src", "node_modules"]
 }
