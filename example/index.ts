@@ -1,5 +1,3 @@
-//import { PhoneInput } from "./phone-input.js";
-
 let phoneInput = new (window as any).ValidationLibrary.PhoneInput();
 let phone = <HTMLInputElement> document.querySelector('.phone');
 let phoneList = <HTMLInputElement> document.querySelector('.phone--list');
