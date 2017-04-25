@@ -1,11 +1,16 @@
+const webpack = require('webpack');
 const dev = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-    entry: './example/index.ts',
+    entry: dev ? './example/index.ts' :'./src/phone-input.ts',
     watch: dev,
     output: {
-        filename: './example/bundle.js',
+        filename: './dist/phoneinput.min.js'
     },
+    devtool: dev ? 'cheap-source-map' : '',
+    plugins: dev ? [] :[
+        new webpack.optimize.UglifyJsPlugin({})
+    ],
     resolve: {
         extensions: ['.tsx', '.ts', '.js']
     },
