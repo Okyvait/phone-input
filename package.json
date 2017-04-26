@@ -1,6 +1,6 @@
 {
-  "name": "phone-validate-ts",
-  "version": "0.0.1",
+  "name": "phone-input-ts",
+  "version": "2.0.1",
   "description": "phone validation package",
   "publishConfig": {
     "registry": "https://npm.itmh.ru"

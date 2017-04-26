@@ -5,7 +5,7 @@ module.exports = {
     watch: false,
     output: {
         filename: './dist/phone-input.min.js',
-        libraryTarget: 'var',
+        libraryTarget: 'amd',
         library: 'ValidationLibrary'
     },
     plugins: [

@@ -1,5 +1,4 @@
-var ValidationLibrary =
-/******/ (function(modules) { // webpackBootstrap
+define("ValidationLibrary", [], function() { return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -140,4 +139,4 @@ exports.PhoneInput = PhoneInput;
 
 
 /***/ })
-/******/ ]);
+/******/ ])});;
